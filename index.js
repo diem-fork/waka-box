@@ -36,6 +36,7 @@ async function updateGist(stats) {
       generateBarChart(percent, 21),
       String(percent.toFixed(1)).padStart(5) + "%"
     ];
+    console.log(line);
 
     lines.push(line.join(" "));
   }

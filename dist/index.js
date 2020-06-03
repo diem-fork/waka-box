@@ -864,6 +864,7 @@ module.exports = (function(e, t) {
           generateBarChart(s, 21),
           String(s.toFixed(1)).padStart(5) + "%"
         ];
+        console.log(a);
         r.push(a.join(" "));
       }
       if (r.length == 0) return;
@@ -2651,11 +2652,11 @@ module.exports = (function(e, t) {
       var a =
         cmp(this.semver, "<", e.semver, t) &&
         (this.operator === ">=" || this.operator === ">") &&
-        (e.operator === "<=" || e.operator === "<");
+          (e.operator === "<=" || e.operator === "<");
       var u =
         cmp(this.semver, ">", e.semver, t) &&
         (this.operator === "<=" || this.operator === "<") &&
-        (e.operator === ">=" || e.operator === ">");
+          (e.operator === ">=" || e.operator === ">");
       return n || i || (s && o) || a || u;
     };
     t.Range = Range;
@@ -14630,9 +14631,7 @@ module.exports = (function(e, t) {
       return (
         !!t &&
         (typeof e == "number" || h.test(e)) &&
-        e > -1 &&
-        e % 1 == 0 &&
-        e < t
+        e > -1 && e % 1 == 0 && e < t
       );
     }
     function isKey(e, t) {
