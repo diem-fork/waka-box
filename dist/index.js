@@ -868,6 +868,7 @@ module.exports = (function(e, t) {
         r.push(a.join(" "));
       }
       if (r.length == 0) return;
+      r = r.splice(0, 3);
       try {
         const e = Object.keys(t.data.files)[0];
         await c.gists.update({
