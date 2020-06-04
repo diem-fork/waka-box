@@ -26,7 +26,7 @@ async function updateGist(stats) {
   }
 
   const lines = [];
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < Math.min(stats.data.languages.length, 3); i++) {
     const data = stats.data.languages[i];
     const { name, percent, text: time } = data;
 
@@ -36,13 +36,11 @@ async function updateGist(stats) {
       generateBarChart(percent, 21),
       String(percent.toFixed(1)).padStart(5) + "%"
     ];
-    console.log(line);
 
     lines.push(line.join(" "));
   }
 
   if (lines.length == 0) return;
-  lines = lines.splice(0, 3);
 
   try {
     // Get original filename to update that same file
