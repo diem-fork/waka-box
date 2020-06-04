@@ -9,9 +9,9 @@ jobs:
   update-gist:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
       - name: Update gist
-        uses: diem-fork/waka-box@master
+        uses: actions/checkout@master
+        # uses: diem-fork/waka-box@master
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: a937e7543ab5dbdfa219eed5a78d9ba6
